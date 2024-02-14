@@ -33,10 +33,9 @@ namespace EPLE.App
     }
     public enum eLedCmd
     {
-        NONE = 0,
-        OFF = 1,
-        ON_50 = 2,
-        ON_100 = 3
+        OFF = 0,
+        ON_100 = 2,
+        ON_50 = 3
     }
 
     public enum eLockUnlock
@@ -52,6 +51,7 @@ namespace EPLE.App
         OFF= 0,
         ON= 1,
     }
+
     public enum eOpenClose
     {
         CLOSE = 0,

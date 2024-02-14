@@ -87,9 +87,21 @@
                             <Grid Grid.Row="1">
                                 <StackPanel Orientation="Horizontal" Width="Auto" VerticalAlignment="Stretch" Margin="5">
                                     <Label Height="Auto" Width="Auto" Content="조명" Margin="5"></Label>
-                                    <Button Height="Auto" Width="Auto" Content="끄기" Margin="5" />
-                                    <Button Height="Auto" Width="Auto" Content="50% 켜기" Margin="5"/>
-                                    <Button Height="Auto" Width="Auto" Content="100% 켜기" Margin="5"/>
+                                    <dxc:SimpleButton Height="Auto" Width="Auto" Content="끄기" Margin="5" >
+                                        <dxmvvm:Interaction.Triggers>
+                                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding StockLampOffClickedCommand}" PassEventArgsToCommand="False"/>
+                                        </dxmvvm:Interaction.Triggers>
+                                    </dxc:SimpleButton>
+                                    <dxc:SimpleButton Height="Auto" Width="Auto" Content="50% 켜기" Margin="5">
+                                        <dxmvvm:Interaction.Triggers>
+                                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding StockLampOn50ClickedCommand}" PassEventArgsToCommand="False"/>
+                                        </dxmvvm:Interaction.Triggers>
+                                    </dxc:SimpleButton>
+                                    <dxc:SimpleButton Height="Auto" Width="Auto" Content="100% 켜기" Margin="5">
+                                        <dxmvvm:Interaction.Triggers>
+                                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding StockLampOn100ClickedCommand}" PassEventArgsToCommand="False"/>
+                                        </dxmvvm:Interaction.Triggers>
+                                    </dxc:SimpleButton>
                                 </StackPanel>
                             </Grid>
                         </Grid>

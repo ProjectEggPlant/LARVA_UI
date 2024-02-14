@@ -26,6 +26,9 @@ namespace LARVA_UI.ViewModels
     {
         private string[] _boxButtonNames = new string[30];
 
+        [GenerateProperty]
+        private int selectedZoneNumber;
+
         public ObservableCollection<string> BoxButtonNames { get; private set; }
 
         public ObservableCollection<string> SelectedBoxes { get; private set; }
@@ -63,6 +66,108 @@ namespace LARVA_UI.ViewModels
             //JobManager.Instance.CreateNewJob("TOBBAB_SUPPLY", )
         }
 
+        [GenerateCommand]
+        private void StockLampOffClicked(RoutedEventArgs args)
+        {
+
+            switch(selectedZoneNumber)
+            {
+                case 1:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone1_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 2:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone2_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 3:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone3_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 4:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone4_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 5:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone5_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 6:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone6_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 7:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone7_OnOff, (int)eLedCmd.OFF);
+                    break;
+                case 8:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone8_OnOff, (int)eLedCmd.OFF);
+                    break;
+            }
+           
+        }
+
+        [GenerateCommand]
+        private void StockLampOn50Clicked(RoutedEventArgs args)
+        {
+
+            switch (selectedZoneNumber)
+            {
+                case 1:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone1_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 2:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone2_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 3:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone3_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 4:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone4_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 5:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone5_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 6:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone6_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 7:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone7_OnOff, (int)eLedCmd.ON_50);
+                    break;
+                case 8:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone8_OnOff, (int)eLedCmd.ON_50);
+                    break;
+            }
+
+        }
+
+        [GenerateCommand]
+        private void StockLampOn100Clicked(RoutedEventArgs args)
+        {
+
+            switch (selectedZoneNumber)
+            {
+                case 1:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone1_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 2:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone2_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 3:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone3_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 4:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone4_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 5:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone5_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 6:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone6_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 7:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone7_OnOff, (int)eLedCmd.ON_100);
+                    break;
+                case 8:
+                    DataManager.Instance.SET_INT_DATA(IoNameHelper.oLed_nZone8_OnOff, (int)eLedCmd.ON_100);
+                    break;
+            }
+
+        }
+
         private void InitializeCommands()
         {
             ChangeBoxZoneCommands = new ICommand[8];
@@ -80,6 +185,8 @@ namespace LARVA_UI.ViewModels
                 LOCATION_INFO shelfinfo = LocationManager.Instance.GetLocationList().FindAll((x) => (x.LOCATION_ID == (i + ((zoneNumber - 1) * 30)))).FirstOrDefault();
                 BoxButtonNames[i] = $"{shelfinfo.LOCATION_NAME}\n{shelfinfo.LEVEL}";
             }
+
+            selectedZoneNumber = zoneNumber;
         }
 
         public void ClearSelectedBoxes()
