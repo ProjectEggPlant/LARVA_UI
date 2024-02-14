@@ -26,7 +26,6 @@
         </Grid.ColumnDefinitions>
 
         <dxlc:LayoutControl Orientation="Vertical" StretchContentVertically="False" Background="Transparent">
-
             <dxlc:LayoutGroup>
                 <dxlc:LayoutGroup.GroupBoxStyle>
                     <Style TargetType="dxlc:GroupBox">
@@ -138,10 +137,7 @@
                
             </dxlc:LayoutGroup>
 
-            <dxlc:LayoutGroup Header="항온항습 파라미터 설정"
-View="GroupBox"
-Orientation="Vertical"
-ItemLabelsAlignment="Local">
+            <dxlc:LayoutGroup Header="항온항습 파라미터 설정" View="GroupBox" Orientation="Vertical" ItemLabelsAlignment="Local">
                 <dxlc:LayoutItem Label="설정 온도 (도) :" IsRequired="True">
                     <dxlc:FlowLayoutControl Orientation="Horizontal" ItemSpace="15" Padding="0">
                         <dxe:SpinEdit MinWidth="150" EditValue="{Binding HvacTargetTemperature}" ShowEditorButtons="False"  MaxValue="60" MinValue="0" DisplayFormatString="N2" IsReadOnly="False" HorizontalContentAlignment="Center"/>
@@ -163,7 +159,53 @@ ItemLabelsAlignment="Local">
                     </dxlc:FlowLayoutControl>
                 </dxlc:LayoutItem>
             </dxlc:LayoutGroup>
+
+            <dxlc:LayoutGroup Header="모션 파라미터 설정" View="GroupBox" Orientation="Vertical" ItemLabelsAlignment="Local">
+                <dxlc:LayoutItem Label="X축 이동 속도 :" IsRequired="True">
+                    <dxlc:FlowLayoutControl Orientation="Horizontal" ItemSpace="15" Padding="0">
+                        <dxe:SpinEdit MinWidth="150" EditValue="{Binding XAxisMoveVelocity}" ShowEditorButtons="False"  MaxValue="500" MinValue="0" DisplayFormatString="N2" IsReadOnly="False" HorizontalContentAlignment="Center"/>
+                        <dxc:SimpleButton Content="설정" MinWidth="50" Margin="1 0 1 0">
+                            <dxmvvm:Interaction.Triggers>
+                                <dxmvvm:EventToCommand EventName="Click" Command="{Binding XAxisMoveVelocitySetClickCommand}" PassEventArgsToCommand="False"/>
+                            </dxmvvm:Interaction.Triggers>
+                        </dxc:SimpleButton>
+                    </dxlc:FlowLayoutControl>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Y축 이동 속도 :" IsRequired="True">
+                    <dxlc:FlowLayoutControl Orientation="Horizontal" ItemSpace="15" Padding="0">
+                        <dxe:SpinEdit MinWidth="150" EditValue="{Binding YAxisMoveVelocity}" ShowEditorButtons="False"  MaxValue="500" MinValue="0" DisplayFormatString="N2" IsReadOnly="False" HorizontalContentAlignment="Center"/>
+                        <dxc:SimpleButton Content="설정" MinWidth="50" Margin="1 0 1 0">
+                            <dxmvvm:Interaction.Triggers>
+                                <dxmvvm:EventToCommand EventName="Click" Command="{Binding YAxisMoveVelocitySetClickCommand}" PassEventArgsToCommand="False"/>
+                            </dxmvvm:Interaction.Triggers>
+                        </dxc:SimpleButton>
+                    </dxlc:FlowLayoutControl>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Z축 이동 속도 :" IsRequired="True">
+                    <dxlc:FlowLayoutControl Orientation="Horizontal" ItemSpace="15" Padding="0">
+                        <dxe:SpinEdit MinWidth="150" EditValue="{Binding ZAxisMoveVelocity}" ShowEditorButtons="False"  MaxValue="500" MinValue="0" DisplayFormatString="N2" IsReadOnly="False" HorizontalContentAlignment="Center"/>
+                        <dxc:SimpleButton Content="설정" MinWidth="50" Margin="1 0 1 0">
+                            <dxmvvm:Interaction.Triggers>
+                                <dxmvvm:EventToCommand EventName="Click" Command="{Binding ZAxisMoveVelocitySetClickCommand}" PassEventArgsToCommand="False"/>
+                            </dxmvvm:Interaction.Triggers>
+                        </dxc:SimpleButton>
+                    </dxlc:FlowLayoutControl>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="FLIP축 이동 속도 :" IsRequired="True">
+                    <dxlc:FlowLayoutControl Orientation="Horizontal" ItemSpace="15" Padding="0">
+                        <dxe:SpinEdit MinWidth="150" EditValue="{Binding FlipAxisMoveVelocity}" ShowEditorButtons="False"  MaxValue="500" MinValue="0" DisplayFormatString="N2" IsReadOnly="False" HorizontalContentAlignment="Center"/>
+                        <dxc:SimpleButton Content="설정" MinWidth="50" Margin="1 0 1 0">
+                            <dxmvvm:Interaction.Triggers>
+                                <dxmvvm:EventToCommand EventName="Click" Command="{Binding FlipAxisMoveVelocitySetClickCommand}" PassEventArgsToCommand="False"/>
+                            </dxmvvm:Interaction.Triggers>
+                        </dxc:SimpleButton>
+                    </dxlc:FlowLayoutControl>
+
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
         </dxlc:LayoutControl>
+        
+        
 
     </Grid>
 </UserControl>

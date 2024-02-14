@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LARVA_UI.ViewModels;
 namespace LARVA_UI.Views
 {
     /// <summary>
@@ -25,11 +26,13 @@ namespace LARVA_UI.Views
         public ManualView()
         {
             InitializeComponent();
+
+            InitButtonColor();
         }
-        private void CylinderForward_Click(object sender, RoutedEventArgs e)
+
+        private void InitButtonColor()
         {
-            bool result = DataManager.Instance.SET_BOOL_DATA(IoNameHelper.iFlip_nImpCyl_L1_FwdBwd, true);
-            // 실린더 전진 로직
+
         }
 
         private void CylinderBackward_Click(object sender, RoutedEventArgs e)
@@ -60,11 +63,6 @@ namespace LARVA_UI.Views
         private void FlipConvShutter_Click(object sender, RoutedEventArgs e)
         {
             result = DataManager.Instance.SET_INT_DATA(IoNameHelper.iFlip_nOutShutter_UpDown, 1);
-        }
-
-        private void LoaderShutterOpen_Click(object sender, RoutedEventArgs e)
-        {
-            result = DataManager.Instance.SET_INT_DATA(IoNameHelper.iLoader_nShutter_UpDown, 1);
         }
     }
 }

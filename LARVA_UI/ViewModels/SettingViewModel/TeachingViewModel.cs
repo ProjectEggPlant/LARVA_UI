@@ -425,6 +425,42 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand]
+        private void TeachingXPositionMoveClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oXAxis_dTarget_Pos, Teaching_X_Position);
+            DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oXAxis_nServo_MoveABS, true);
+        }
+
+        [GenerateCommand]
+        private void TeachingYInPositionMoveClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Pos, Teaching_Y_In_Position);
+            DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oYAxis_nServo_MoveABS, true);
+        }
+
+        [GenerateCommand]
+        private void TeachingYOutPositionMoveClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Pos, Teaching_Y_Out_Position);
+            DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oYAxis_nServo_MoveABS, true);
+        }
+
+        [GenerateCommand]
+        private void TeachingZUpPositionMoveClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oZAxis_dTarget_Pos, Teaching_Z_Up_Position);
+            DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oZAxis_nServo_MoveABS, true);
+        }
+
+        [GenerateCommand]
+        private void TeachingZDownPositionMoveClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oZAxis_dTarget_Pos, Teaching_Z_Down_Position);
+            DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oZAxis_nServo_MoveABS, true);
+        }
+
+
         private void SetXPosition(int location_id, double position, bool io_defalut_set = false)
         {
             string ioName = string.Format("oLoc.dXPos.{0:000}", location_id);

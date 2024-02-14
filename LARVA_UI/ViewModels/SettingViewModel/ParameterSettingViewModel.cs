@@ -20,6 +20,15 @@ namespace LARVA_UI.ViewModels
         }
 
         [GenerateProperty]
+        private double flipAxisMoveVelocity;
+        [GenerateProperty]
+        private double xAxisMoveVelocity;
+        [GenerateProperty]
+        private double yAxisMoveVelocity;
+        [GenerateProperty]
+        private double zAxisMoveVelocity;
+
+        [GenerateProperty]
         private int flipImpactDuration;
         [GenerateProperty]
         private int flipOutConveyorDuration;
@@ -41,6 +50,30 @@ namespace LARVA_UI.ViewModels
         public ParameterSettingViewModel()
         {
 
+        }
+
+        [GenerateCommand]
+        private void FlipAxisMoveVelocitySetClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oTAxis_dTarget_Velo, FlipAxisMoveVelocity);
+        }
+
+        [GenerateCommand]
+        private void XAxisMoveVelocitySetClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oXAxis_dTarget_Velo, XAxisMoveVelocity);
+        }
+
+        [GenerateCommand]
+        private void YAxisMoveVelocitySetClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Velo, YAxisMoveVelocity);
+        }
+
+        [GenerateCommand]
+        private void ZAxisMoveVelocitySetClick(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oZAxis_dTarget_Velo, ZAxisMoveVelocity);
         }
 
         [GenerateCommand]

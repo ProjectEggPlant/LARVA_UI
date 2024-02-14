@@ -7,40 +7,13 @@ using EPLE.App;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Windows.Media;
+using DevExpress.Xpf.Core;
 
 namespace LARVA_UI.ViewModels
 {
     [GenerateViewModel]
     public partial class ManualViewModel
     {
-        //public DelegateCommand<RoutedEventArgs> LoaderShutterCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> LoaderShuttleCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> UpperCoverCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> ImpactCylinderCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> OutConveyorCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> FlipOutShutterCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> HoperMotorCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> HotAirBlowerCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> UVLampCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> MistCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> TbsShutterCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> FlatMotorCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> SwingCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> MixerCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> WaterTankValveCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> WashWaterCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> WaterPumpCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> ZoneCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> FloorCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> RowCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> RackCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> CirculatorCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> AmmoniaCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> TRSHandCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> TRSClampCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> TRSCoverCommandClicked { get; private set; }
-        //public DelegateCommand<RoutedEventArgs> TRSCoverVacCommandClicked { get; private set; }
-
         [GenerateProperty]
         private SolidColorBrush loaderShutterOpenBG;
         [GenerateProperty]
@@ -136,11 +109,11 @@ namespace LARVA_UI.ViewModels
         [GenerateProperty]
         private SolidColorBrush floor5BG;
         [GenerateProperty]
-        private SolidColorBrush row1BG;
+        private SolidColorBrush column1BG;
         [GenerateProperty]
-        private SolidColorBrush row2BG;
+        private SolidColorBrush column2BG;
         [GenerateProperty]
-        private SolidColorBrush row3BG;
+        private SolidColorBrush column3BG;
         [GenerateProperty]
         private SolidColorBrush rackMoveBG;
         [GenerateProperty]
@@ -172,609 +145,62 @@ namespace LARVA_UI.ViewModels
         [GenerateProperty]
         private SolidColorBrush ammoniaOffBG;
 
+        [GenerateProperty]
+        private SolidColorBrush flipSelectBG;
+        [GenerateProperty]
+        private SolidColorBrush tobbabSelectBG;
+        [GenerateProperty]
+        private SolidColorBrush loaderSelectBG;
+        [GenerateProperty]
+        private SolidColorBrush visionSelectBG;
+        [GenerateProperty]
+        private SolidColorBrush washSelectBG;
+        [GenerateProperty]
+        private SolidColorBrush bufferSelectBG;
 
-        //public SolidColorBrush MistOnBG
-        //{
-        //    get { return mistOnBG; }
-        //    set
-        //    {
-        //        mistOnBG = value;
-        //        OnPropertyChanged(nameof(MistOnBG));
-        //    }
-        //}
-        //public SolidColorBrush MistOffBG
-        //{
-        //    get { return mistOffBG; }
-        //    set
-        //    {
-        //        mistOffBG = value;
-        //        OnPropertyChanged(nameof(MistOffBG));
-        //    }
-        //}
-        //public SolidColorBrush TbsShutterOpenBG
-        //{
-        //    get { return tbsShutterOpenBG; }
-        //    set
-        //    {
-        //        tbsShutterOpenBG = value;
-        //        OnPropertyChanged(nameof(TbsShutterOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush TbsShutterCloseBG
-        //{
-        //    get { return tbsShutterCloseBG; }
-        //    set
-        //    {
-        //        tbsShutterCloseBG = value;
-        //        OnPropertyChanged(nameof(TbsShutterCloseBG));
-        //    }
-        //}
-        //public SolidColorBrush FlatMotorOnBG
-        //{
-        //    get { return flatMotorOnBG; }
-        //    set
-        //    {
-        //        flatMotorOnBG = value;
-        //        OnPropertyChanged(nameof(FlatMotorOnBG));
-        //    }
-        //}
-        //public SolidColorBrush FlatMotorOffBG
-        //{
-        //    get { return flatMotorOffBG; }
-        //    set
-        //    {
-        //        flatMotorOffBG = value;
-        //        OnPropertyChanged(nameof(FlatMotorOffBG));
-        //    }
-        //}
-        //public SolidColorBrush SwingOnBG
-        //{
-        //    get { return swingOnBG; }
-        //    set
-        //    {
-        //        swingOnBG = value;
-        //        OnPropertyChanged(nameof(SwingOnBG));
-        //    }
-        //}
-        //public SolidColorBrush SwingOffBG
-        //{
-        //    get { return swingOffBG; }
-        //    set
-        //    {
-        //        swingOffBG = value;
-        //        OnPropertyChanged(nameof(SwingOffBG));
-        //    }
-        //}
-        //public SolidColorBrush MixerOnBG
-        //{
-        //    get { return mixerOnBG; }
-        //    set
-        //    {
-        //        mixerOnBG = value;
-        //        OnPropertyChanged(nameof(MixerOnBG));
-        //    }
-        //}
-        //public SolidColorBrush MixerOffBG
-        //{
-        //    get { return mixerOffBG; }
-        //    set
-        //    {
-        //        mixerOffBG = value;
-        //        OnPropertyChanged(nameof(MixerOffBG));
-        //    }
-        //}
-        //public SolidColorBrush WaterTankValveOpenBG
-        //{
-        //    get { return waterTankValveOpenBG; }
-        //    set
-        //    {
-        //        waterTankValveOpenBG = value;
-        //        OnPropertyChanged(nameof(WaterTankValveOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush WaterTankValveCloseBG
-        //{
-        //    get { return waterTankValveCloseBG; }
-        //    set
-        //    {
-        //        waterTankValveCloseBG = value;
-        //        OnPropertyChanged(nameof(WaterTankValveCloseBG));
-        //    }
-        //}
-        //public SolidColorBrush WashWaterOpenBG
-        //{
-        //    get { return washWaterOpenBG; }
-        //    set
-        //    {
-        //        washWaterOpenBG = value;
-        //        OnPropertyChanged(nameof(WashWaterOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush WashWaterCloseBG
-        //{
-        //    get { return washWaterCloseBG; }
-        //    set
-        //    {
-        //        washWaterCloseBG = value;
-        //        OnPropertyChanged(nameof(WashWaterCloseBG));
-        //    }
-        //}
-        //public SolidColorBrush WaterPumpOpenBG
-        //{
-        //    get { return waterPumpOpenBG; }
-        //    set
-        //    {
-        //        waterPumpOpenBG = value;
-        //        OnPropertyChanged(nameof(WaterPumpOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush WaterPumpCloseBG
-        //{
-        //    get { return waterPumpCloseBG; }
-        //    set
-        //    {
-        //        waterPumpCloseBG = value;
-        //        OnPropertyChanged(nameof(WaterPumpCloseBG));
-        //    }
-        //}
-        
-        //public SolidColorBrush Zone1BG
-        //{
-        //    get { return zone1BG; }
-        //    set
-        //    {
-        //        zone1BG = value;
-        //        OnPropertyChanged(nameof(Zone1BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone2BG
-        //{
-        //    get { return zone2BG; }
-        //    set
-        //    {
-        //        zone2BG = value;
-        //        OnPropertyChanged(nameof(Zone2BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone3BG
-        //{
-        //    get { return zone3BG; }
-        //    set
-        //    {
-        //        zone3BG = value;
-        //        OnPropertyChanged(nameof(Zone3BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone4BG
-        //{
-        //    get { return zone4BG; }
-        //    set
-        //    {
-        //        zone4BG = value;
-        //        OnPropertyChanged(nameof(Zone4BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone5BG
-        //{
-        //    get { return zone5BG; }
-        //    set
-        //    {
-        //        zone5BG = value;
-        //        OnPropertyChanged(nameof(Zone5BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone6BG
-        //{
-        //    get { return zone6BG; }
-        //    set
-        //    {
-        //        zone6BG = value;
-        //        OnPropertyChanged(nameof(Zone6BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone7BG
-        //{
-        //    get { return zone7BG; }
-        //    set
-        //    {
-        //        zone7BG = value;
-        //        OnPropertyChanged(nameof(Zone7BG));
-        //    }
-        //}
-        //public SolidColorBrush Zone8BG
-        //{
-        //    get { return zone8BG; }
-        //    set
-        //    {
-        //        zone8BG = value;
-        //        OnPropertyChanged(nameof(Zone8BG));
-        //    }
-        //}
-        //public SolidColorBrush Floor1BG
-        //{
-        //    get { return floor1BG; }
-        //    set
-        //    {
-        //        floor1BG = value;
-        //        OnPropertyChanged(nameof(Floor1BG));
-        //    }
-        //}
-        //public SolidColorBrush Floor2BG
-        //{
-        //    get { return floor2BG; }
-        //    set
-        //    {
-        //        floor2BG = value;
-        //        OnPropertyChanged(nameof(Floor2BG));
-        //    }
-        //}
-        //public SolidColorBrush Floor3BG
-        //{
-        //    get { return floor3BG; }
-        //    set
-        //    {
-        //        floor3BG = value;
-        //        OnPropertyChanged(nameof(Floor3BG));
-        //    }
-        //}
-        //public SolidColorBrush Floor4BG
-        //{
-        //    get { return floor4BG; }
-        //    set
-        //    {
-        //        floor4BG = value;
-        //        OnPropertyChanged(nameof(Floor4BG));
-        //    }
-        //}
-        //public SolidColorBrush Floor5BG
-        //{
-        //    get { return floor5BG; }
-        //    set
-        //    {
-        //        floor5BG = value;
-        //        OnPropertyChanged(nameof(Floor5BG));
-        //    }
-        //}
-        //public SolidColorBrush Row1BG
-        //{
-        //    get { return row1BG; }
-        //    set
-        //    {
-        //        row1BG = value;
-        //        OnPropertyChanged(nameof(Row1BG));
-        //    }
-        //}
-        //public SolidColorBrush Row2BG
-        //{
-        //    get { return row2BG; }
-        //    set
-        //    {
-        //        row2BG = value;
-        //        OnPropertyChanged(nameof(Row2BG));
-        //    }
-        //}
-        //public SolidColorBrush Row3BG
-        //{
-        //    get { return row3BG; }
-        //    set
-        //    {
-        //        row3BG = value;
-        //        OnPropertyChanged(nameof(Row3BG));
-        //    }
-        //}
-        //public SolidColorBrush RackMoveBG
-        //{
-        //    get { return rackMoveBG; }
-        //    set
-        //    {
-        //        rackMoveBG = value;
-        //        OnPropertyChanged(nameof(RackMoveBG));
-        //    }
-        //}
-        //public SolidColorBrush RackLoadingBG
-        //{
-        //    get { return rackLoadingBG; }
-        //    set
-        //    {
-        //        rackLoadingBG = value;
-        //        OnPropertyChanged(nameof(RackLoadingBG));
-        //    }
-        //}
-        //public SolidColorBrush RackUnloadingBG
-        //{
-        //    get { return rackUnloadingBG; }
-        //    set
-        //    {
-        //        rackUnloadingBG = value;
-        //        OnPropertyChanged(nameof(RackUnloadingBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSHandLeftBG
-        //{
-        //    get { return tRSHandLeftBG; }
-        //    set
-        //    {
-        //        tRSHandLeftBG = value;
-        //        OnPropertyChanged(nameof(TRSHandLeftBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSHandRightBG
-        //{
-        //    get { return tRSHandRightBG; }
-        //    set
-        //    {
-        //        tRSHandRightBG = value;
-        //        OnPropertyChanged(nameof(TRSHandRightBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSClampOpenBG
-        //{
-        //    get { return tRSClampOpenBG; }
-        //    set
-        //    {
-        //        tRSClampOpenBG = value;
-        //        OnPropertyChanged(nameof(TRSClampOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSClampCloseBG
-        //{
-        //    get { return tRSClampCloseBG; }
-        //    set
-        //    {
-        //        tRSClampCloseBG = value;
-        //        OnPropertyChanged(nameof(TRSClampCloseBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSCoverUpBG
-        //{
-        //    get { return tRSCoverUpBG; }
-        //    set
-        //    {
-        //        tRSCoverUpBG = value;
-        //        OnPropertyChanged(nameof(TRSCoverUpBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSCoverDnBG
-        //{
-        //    get { return tRSCoverDnBG; }
-        //    set
-        //    {
-        //        tRSCoverDnBG = value;
-        //        OnPropertyChanged(nameof(TRSCoverDnBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSCoverVacOnBG
-        //{
-        //    get { return tRSCoverVacOnBG; }
-        //    set
-        //    {
-        //        tRSCoverVacOnBG = value;
-        //        OnPropertyChanged(nameof(TRSCoverVacOnBG));
-        //    }
-        //}
-        //public SolidColorBrush TRSCoverOffBG
-        //{
-        //    get { return tRSCoverOffBG; }
-        //    set
-        //    {
-        //        tRSCoverOffBG = value;
-        //        OnPropertyChanged(nameof(TRSCoverOffBG));
-        //    }
-        //}
-        //public SolidColorBrush CirculatorOnBG
-        //{
-        //    get { return circulatorOnBG; }
-        //    set
-        //    {
-        //        circulatorOnBG = value;
-        //        OnPropertyChanged(nameof(CirculatorOnBG));
-        //    }
-        //}
-        //public SolidColorBrush CirculatorOffBG
-        //{
-        //    get { return circulatorOffBG; }
-        //    set
-        //    {
-        //        circulatorOffBG = value;
-        //        OnPropertyChanged(nameof(CirculatorOffBG));
-        //    }
-        //}
-        //public SolidColorBrush AmmoniaOnBG
-        //{
-        //    get { return ammoniaOnBG; }
-        //    set
-        //    {
-        //        ammoniaOnBG = value;
-        //        OnPropertyChanged(nameof(AmmoniaOnBG));
-        //    }
-        //}
-        //public SolidColorBrush AmmoniaOffBG
-        //{
-        //    get { return ammoniaOffBG; }
-        //    set
-        //    {
-        //        ammoniaOffBG = value;
-        //        OnPropertyChanged(nameof(AmmoniaOffBG));
-        //    }
-        //}
-
-        //public SolidColorBrush LoaderShuttleFWBG
-        //{
-        //    get { return loaderShuttleFWBG; }
-        //    set
-        //    {
-        //        loaderShuttleFWBG = value;
-        //        OnPropertyChanged(nameof(LoaderShuttleFWBG));
-        //    }
-        //}
-        //public SolidColorBrush LoaderShuttleBWBG
-        //{
-        //    get { return loaderShuttleBWBG; }
-        //    set
-        //    {
-        //        loaderShuttleBWBG = value;
-        //        OnPropertyChanged(nameof(LoaderShuttleBWBG));
-        //    }
-        //}
-        //public SolidColorBrush UpperCoverUpBG
-        //{
-        //    get { return upperCoverUpBG; }
-        //    set
-        //    {
-        //        upperCoverUpBG = value;
-        //        OnPropertyChanged(nameof(UpperCoverUpBG));
-        //    }
-        //}
-        //public SolidColorBrush UpperCoverDnBG
-        //{
-        //    get { return upperCoverDnBG; }
-        //    set
-        //    {
-        //        upperCoverDnBG = value;
-        //        OnPropertyChanged(nameof(UpperCoverDnBG));
-        //    }
-        //}
-        //public SolidColorBrush ImpactCylinderOnBG
-        //{
-        //    get { return impactCylinderOnBG; }
-        //    set
-        //    {
-        //        impactCylinderOnBG = value;
-        //        OnPropertyChanged(nameof(ImpactCylinderOnBG));
-        //    }
-        //}
-        //public SolidColorBrush ImpactCylinderOffBG
-        //{
-        //    get { return impactCylinderOffBG; }
-        //    set
-        //    {
-        //        impactCylinderOffBG = value;
-        //        OnPropertyChanged(nameof(ImpactCylinderOffBG));
-        //    }
-        //}
-        //public SolidColorBrush OutConveyorOnBG
-        //{
-        //    get { return outConveyorOnBG; }
-        //    set
-        //    {
-        //        outConveyorOnBG = value;
-        //        OnPropertyChanged(nameof(OutConveyorOnBG));
-        //    }
-        //}
-        //public SolidColorBrush OutConveyorOffBG
-        //{
-        //    get { return outConveyorOffBG; }
-        //    set
-        //    {
-        //        outConveyorOffBG = value;
-        //        OnPropertyChanged(nameof(OutConveyorOffBG));
-        //    }
-        //}
-        //public SolidColorBrush FlipOutShutterOpenBG
-        //{
-        //    get { return flipOutShutterOpenBG; }
-        //    set
-        //    {
-        //        flipOutShutterOpenBG = value;
-        //        OnPropertyChanged(nameof(FlipOutShutterOpenBG));
-        //    }
-        //}
-        //public SolidColorBrush FlipOutShutterCloseBG
-        //{
-        //    get { return flipOutShutterCloseBG; }
-        //    set
-        //    {
-        //        flipOutShutterCloseBG = value;
-        //        OnPropertyChanged(nameof(FlipOutShutterCloseBG));
-        //    }
-        //}
-        //public SolidColorBrush HoperMotorOnBG
-        //{
-        //    get { return hoperMotorOnBG; }
-        //    set
-        //    {
-        //        hoperMotorOnBG = value;
-        //        OnPropertyChanged(nameof(HoperMotorOnBG));
-        //    }
-        //}
-        //public SolidColorBrush HoperMotorOffBG
-        //{
-        //    get { return hoperMotorOffBG; }
-        //    set
-        //    {
-        //        hoperMotorOffBG = value;
-        //        OnPropertyChanged(nameof(HoperMotorOffBG));
-        //    }
-        //}
-        //public SolidColorBrush HotAirBlowerOnBG
-        //{
-        //    get { return hotAirBlowerOnBG; }
-        //    set
-        //    {
-        //        hotAirBlowerOnBG = value;
-        //        OnPropertyChanged(nameof(HotAirBlowerOnBG));
-        //    }
-        //}
-        //public SolidColorBrush HotAirBlowerOffBG
-        //{
-        //    get { return hotAirBlowerOffBG; }
-        //    set
-        //    {
-        //        hotAirBlowerOffBG = value;
-        //        OnPropertyChanged(nameof(HotAirBlowerOffBG));
-        //    }
-        //}
-        //public SolidColorBrush UVLampOnBG
-        //{
-        //    get { return uVLampOnBG; }
-        //    set
-        //    {
-        //        uVLampOnBG = value;
-        //        OnPropertyChanged(nameof(UVLampOnBG));
-        //    }
-        //}
-        //public SolidColorBrush UVLampOffBG
-        //{
-        //    get { return uVLampOffBG; }
-        //    set
-        //    {
-        //        uVLampOffBG = value;
-        //        OnPropertyChanged(nameof(UVLampOffBG));
-        //    }
-        //}
+        private string selectedZone;
+        private string selectedFloor;
+        private string selectedColumn;
+        private string selectedProcess;
 
         public ManualViewModel()
         {
-            //LoaderShutterCommandClicked = new DelegateCommand<RoutedEventArgs>(LoaderShutterCommand);
-            //LoaderShuttleCommandClicked = new DelegateCommand<RoutedEventArgs>(LoaderShuttleCommand);
-            //UpperCoverCommandClicked = new DelegateCommand<RoutedEventArgs>(UpperCoverCommand);
-            //ImpactCylinderCommandClicked = new DelegateCommand<RoutedEventArgs>(ImpactCylinderCommand);
-            //OutConveyorCommandClicked = new DelegateCommand<RoutedEventArgs>(OutConveyorCommand);
-            //FlipOutShutterCommandClicked = new DelegateCommand<RoutedEventArgs>(FlipOutShutterCommand);
-            //HoperMotorCommandClicked = new DelegateCommand<RoutedEventArgs>(HoperMotorCommand);
-            //HotAirBlowerCommandClicked = new DelegateCommand<RoutedEventArgs>(HotAirBlowerCommand);
-            //UVLampCommandClicked = new DelegateCommand<RoutedEventArgs>(UVLampCommand);
-            //MistCommandClicked = new DelegateCommand<RoutedEventArgs>(MistCommand);
-            //TbsShutterCommandClicked = new DelegateCommand<RoutedEventArgs>(TbsShutterCommand);
-            //FlatMotorCommandClicked = new DelegateCommand<RoutedEventArgs>(FlatMotorCommand);
-            //SwingCommandClicked = new DelegateCommand<RoutedEventArgs>(SwingCommand);
-            //MixerCommandClicked = new DelegateCommand<RoutedEventArgs>(MixerCommand);
-            //WaterTankValveCommandClicked = new DelegateCommand<RoutedEventArgs>(WaterTankValveCommand);
-            //WashWaterCommandClicked = new DelegateCommand<RoutedEventArgs>(WashWaterCommand);
-            //WaterPumpCommandClicked = new DelegateCommand<RoutedEventArgs>(WaterPumpCommand);
-            //ZoneCommandClicked = new DelegateCommand<RoutedEventArgs>(ZoneCommand);
-            //FloorCommandClicked = new DelegateCommand<RoutedEventArgs>(FloorCommand);
-            //RowCommandClicked = new DelegateCommand<RoutedEventArgs>(RowCommand);
-            //RackCommandClicked = new DelegateCommand<RoutedEventArgs>(RackCommand);
-            //CirculatorCommandClicked = new DelegateCommand<RoutedEventArgs>(CirculatorCommand);
-            //AmmoniaCommandClicked = new DelegateCommand<RoutedEventArgs>(AmmoniaCommand);
-            //TRSHandCommandClicked = new DelegateCommand<RoutedEventArgs>(TRSHandCommand);
-            //TRSClampCommandClicked = new DelegateCommand<RoutedEventArgs>(TRSClampCommand);
-            //TRSCoverCommandClicked = new DelegateCommand<RoutedEventArgs>(TRSCoverCommand);
-            //TRSCoverVacCommandClicked = new DelegateCommand<RoutedEventArgs>(TRSCoverVacCommand);
-
-
+           
             DataManager.Instance.DataAccess.DataChangedEvent += new EventHandler<DataChangedEventHandlerArgs>(OnDataChanged);
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            selectedZone = "1";
+            Zone1BG = new SolidColorBrush(Colors.LightGreen);
+            Zone2BG = new SolidColorBrush(Colors.Transparent);
+            Zone3BG = new SolidColorBrush(Colors.Transparent);
+            Zone4BG = new SolidColorBrush(Colors.Transparent);
+            Zone5BG = new SolidColorBrush(Colors.Transparent);
+            Zone6BG = new SolidColorBrush(Colors.Transparent);
+            Zone7BG = new SolidColorBrush(Colors.Transparent);
+            Zone8BG = new SolidColorBrush(Colors.Transparent);
+
+            selectedFloor = "1";
+            Floor1BG = new SolidColorBrush(Colors.LightGreen); 
+            Floor2BG = new SolidColorBrush(Colors.Transparent);
+            Floor3BG = new SolidColorBrush(Colors.Transparent);
+            Floor4BG = new SolidColorBrush(Colors.Transparent);
+            Floor5BG = new SolidColorBrush(Colors.Transparent);
+
+            selectedColumn = "1";
+            Column1BG = new SolidColorBrush(Colors.LightGreen);
+            Column2BG = new SolidColorBrush(Colors.Transparent);
+            Column3BG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "로더";
+            LoaderSelectBG = new SolidColorBrush(Colors.LightGreen);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG  = new SolidColorBrush(Colors.Transparent);
         }
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -790,7 +216,7 @@ namespace LARVA_UI.ViewModels
 
             Data data = (Data)e.Data;
 
-            if (Application.Current == null) return; 
+            if (Application.Current == null) return;
 
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -812,6 +238,7 @@ namespace LARVA_UI.ViewModels
                         OutConveyorOffBG = new SolidColorBrush(Colors.Transparent);
                     }
                 }
+
                 if (data.Name == IoNameHelper.iLoader_nShutter_UpDown)
                 {
                     if (Convert.ToInt32(data.Value) == (int)eUpDown.DOWN)
@@ -911,7 +338,7 @@ namespace LARVA_UI.ViewModels
                     }
                     else if (Convert.ToInt32(data.Value) == (int)eFwdBwd.BACKWARD)
                     {
-                        TbsShutterOpenBG =  new SolidColorBrush(Colors.Transparent);
+                        TbsShutterOpenBG = new SolidColorBrush(Colors.Transparent);
                         TbsShutterCloseBG = new SolidColorBrush(Colors.LightGreen);
                     }
                     else
@@ -965,12 +392,12 @@ namespace LARVA_UI.ViewModels
                     }
                     else if (Convert.ToInt32(data.Value) == (int)eFwdBwd.BACKWARD)
                     {
-                        TRSClampCloseBG= new SolidColorBrush(Colors.Transparent);
+                        TRSClampCloseBG = new SolidColorBrush(Colors.Transparent);
                         TRSClampOpenBG = new SolidColorBrush(Colors.LightGreen);
                     }
                     else
                     {
-                        TRSClampCloseBG= new SolidColorBrush(Colors.Transparent);
+                        TRSClampCloseBG = new SolidColorBrush(Colors.Transparent);
                         TRSClampOpenBG = new SolidColorBrush(Colors.Transparent);
                     }
                 }
@@ -983,12 +410,12 @@ namespace LARVA_UI.ViewModels
                     }
                     else if (Convert.ToInt32(data.Value) == (int)eUpDown.DOWN)
                     {
-                        TRSCoverUpBG  = new SolidColorBrush(Colors.Transparent);
+                        TRSCoverUpBG = new SolidColorBrush(Colors.Transparent);
                         TRSCoverDnBG = new SolidColorBrush(Colors.LightGreen);
                     }
                     else
                     {
-                        TRSCoverUpBG  = new SolidColorBrush(Colors.Transparent);
+                        TRSCoverUpBG = new SolidColorBrush(Colors.Transparent);
                         TRSCoverDnBG = new SolidColorBrush(Colors.Transparent);
                     }
                 }
@@ -1012,6 +439,8 @@ namespace LARVA_UI.ViewModels
                 }
             });
         }
+
+        [GenerateCommand(Name = "MistCommandClicked")]
         private void MistCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1023,6 +452,7 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTBS_nMist_OnOff, (int)eOnOff.OFF);
             }
         }
+        [GenerateCommand(Name = "TbsShutterCommandClicked")]
         private void TbsShutterCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1034,6 +464,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTBS_nFlatCyl_RunStop, (int)eRunStop.STOP);
             }
         }
+        
+        [GenerateCommand(Name = "FlatMotorCommandClicked")]
         private void FlatMotorCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1045,6 +477,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTBS_nFlatMotor_RunStop, (int)eRunStop.STOP);
             }
         }
+
+        [GenerateCommand(Name = "SwingCommandClicked")]
         private void SwingCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1056,6 +490,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTBS_nSwingCyl_RunStop, (int)eRunStop.STOP);
             }
         }
+
+        [GenerateCommand(Name = "MixerCommandClicked")]
         private void MixerCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1067,6 +503,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oWash_nWaterValve_OnOff, (int)eMotorCmd.OFF);
             }
         }
+
+        [GenerateCommand(Name = "WaterTankValveCommandClicked")]
         private void WaterTankValveCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1078,6 +516,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oWash_nTankValve_OnOff, (int)eOnOff.OFF);
             }
         }
+
+        [GenerateCommand(Name = "WashWaterCommandClicked")]
         private void WashWaterCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1089,6 +529,7 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oWash_nWaterValve_OnOff, (int)eOnOff.OFF);
             }
         }
+        [GenerateCommand(Name = "WaterPumpCommandClicked")]
         private void WaterPumpCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1100,33 +541,147 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oWash_nWaterPump_OnOff, (int)eOnOff.OFF);
             }
         }
-        private void ZoneCommand(RoutedEventArgs args)
+
+
+
+        [GenerateCommand]
+        private void ZoneSelectClick(RoutedEventArgs args)
         {
-            //
+            SimpleButton btn = (SimpleButton)args.OriginalSource;
+            selectedZone = (string)btn.Content;
+            //selectedZone
+
+            Zone1BG = new SolidColorBrush(Colors.Transparent);
+            Zone2BG = new SolidColorBrush(Colors.Transparent);
+            Zone3BG = new SolidColorBrush(Colors.Transparent);
+            Zone4BG = new SolidColorBrush(Colors.Transparent);
+            Zone5BG = new SolidColorBrush(Colors.Transparent);
+            Zone6BG = new SolidColorBrush(Colors.Transparent);
+            Zone7BG = new SolidColorBrush(Colors.Transparent);
+            Zone8BG = new SolidColorBrush(Colors.Transparent);
+
+            if (selectedZone == "1")
+            {
+                Zone1BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "2")
+            {
+                Zone2BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "3")
+            {
+                Zone3BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "4")
+            {
+                Zone4BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "5")
+            {
+                Zone5BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "6")
+            {
+                Zone6BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "7")
+            {
+                Zone7BG = new SolidColorBrush(Colors.LightGreen);
+            }
+            else if (selectedZone == "8")
+            {
+                Zone8BG = new SolidColorBrush(Colors.LightGreen);
+            }
         }
-        private void FloorCommand(RoutedEventArgs args)
+
+        [GenerateCommand]
+        private void FloorSelectClick(RoutedEventArgs args)
         {
-            //
+            SimpleButton btn = (SimpleButton)args.OriginalSource;
+            selectedFloor = (string)btn.Content;
         }
-        private void RowCommand(RoutedEventArgs args)
+
+        [GenerateCommand]
+        private void ColumnSelectClick(RoutedEventArgs args)
         {
-            //
+            SimpleButton btn = (SimpleButton)args.OriginalSource;
+            selectedColumn = (string)btn.Content;
         }
+
+        [GenerateCommand]
+        private void LoaderSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.LightGreen);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "LOADER";
+        }
+
+        [GenerateCommand]
+        private void BufferSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
+            BufferSelectBG = new SolidColorBrush(Colors.LightGreen);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "BUFFER";
+        }
+
+        [GenerateCommand]
+        private void TobbabSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.LightGreen);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "TOBBAB";
+        }
+
+        [GenerateCommand]
+        private void WashSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.LightGreen);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "TOBBAB";
+        }
+
+
+        [GenerateCommand(Name = "RackCommandClicked")]
         private void RackCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("이동"))
             {
+
             }
             else if (((ContentControl)args.OriginalSource).Content.ToString().Equals("로딩"))
             {
+
             }
             else if (((ContentControl)args.OriginalSource).Content.ToString().Equals("언로딩"))
             {
+
             }
             else
             {
             }
         }
+
+        [GenerateCommand(Name = "CirculatorCommandClicked")]
         private void CirculatorCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1138,6 +693,9 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oAir_nCirculatorFan_OnOff, (int)eOnOff.OFF);
             }
         }
+
+
+        [GenerateCommand(Name = "AmmoniaCommandClicked")]
         private void AmmoniaCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1149,6 +707,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oAmmo_nExhaustFan_OnOff, (int)eOnOff.OFF);
             }
         }
+
+        [GenerateCommand(Name = "TRSHandCommandClicked")]
         private void TRSHandCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("왼쪽"))
@@ -1160,17 +720,21 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nHand_LeftRight, (int)eFwdBwd.BACKWARD);
             }
         }
+
+        [GenerateCommand(Name = "TRSClampCommandClicked")]
         private void TRSClampCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
             {
-                DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eFwdBwd.FORWARD);
+                DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eLockUnlock.UNLOCK);
             }
             else
             {
-                DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eFwdBwd.BACKWARD);
+                DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eLockUnlock.LOCK);
             }
         }
+
+        [GenerateCommand(Name = "TRSCoverCommandClicked")]
         private void TRSCoverCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("위로"))
@@ -1182,6 +746,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nBoxCover_UpDown, (int)eUpDown.DOWN);
             }
         }
+
+        [GenerateCommand(Name = "TRSCoverVacCommandClicked")]
         private void TRSCoverVacCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("흡착"))
@@ -1195,6 +761,8 @@ namespace LARVA_UI.ViewModels
                 DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nCoverVacEject_OnOFF, (int)eOnOff.ON);
             }
         }
+
+        [GenerateCommand(Name = "UVLampCommandClicked")]
         private void UVLampCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("켜짐"))
@@ -1207,6 +775,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "HotAirBlowerCommandClicked")]
         private void HotAirBlowerCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("켜짐"))
@@ -1219,6 +788,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "HoperMotorCommandClicked")]
         private void HoperMotorCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("구동"))
@@ -1231,6 +801,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "FlipOutShutterCommandClicked")]
         private void FlipOutShutterCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString().Equals("열림"))
@@ -1243,6 +814,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "OutConveyorCommandClicked")]
         private void OutConveyorCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString() == "구동")
@@ -1255,6 +827,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "ImpactCylinderCommandClicked")]
         private void ImpactCylinderCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString() == "구동")
@@ -1267,6 +840,7 @@ namespace LARVA_UI.ViewModels
             }
         }
 
+        [GenerateCommand(Name = "UpperCoverCommandClicked")]
         private void UpperCoverCommand(RoutedEventArgs args)
         {
             if (((ContentControl)args.OriginalSource).Content.ToString() == "위로")

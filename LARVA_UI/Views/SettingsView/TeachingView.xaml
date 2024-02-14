@@ -668,6 +668,11 @@
                             <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingXPositionSetClickCommand}" PassEventArgsToCommand="False"/>
                         </dxmvvm:Interaction.Triggers>
                     </dxc:SimpleButton>
+                    <dxc:SimpleButton Content="MOVE" MinWidth="50" Margin="1 0 1 0">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingXPositionMoveClickCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxc:SimpleButton>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal" Margin="3">
                     <dxlc:LayoutItemLabel MinWidth="150" Content=" Y IN POS : " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
@@ -675,6 +680,11 @@
                     <dxc:SimpleButton Content="SET" MinWidth="50" Margin="1 0 1 0">
                         <dxmvvm:Interaction.Triggers>
                             <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingYInPositionSetClickCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxc:SimpleButton>
+                    <dxc:SimpleButton Content="MOVE" MinWidth="50" Margin="1 0 1 0">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingYInPositionMoveClickCommand}" PassEventArgsToCommand="False"/>
                         </dxmvvm:Interaction.Triggers>
                     </dxc:SimpleButton>
                 </WrapPanel>
@@ -686,6 +696,11 @@
                             <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingYOutPositionSetClickCommand}" PassEventArgsToCommand="False"/>
                         </dxmvvm:Interaction.Triggers>
                     </dxc:SimpleButton>
+                    <dxc:SimpleButton Content="MOVE" MinWidth="50" Margin="1 0 1 0">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingYOutPositionMoveClickCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxc:SimpleButton>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal" Margin="3">
                     <dxlc:LayoutItemLabel MinWidth="150" Content=" Z UP POS : " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
@@ -695,6 +710,11 @@
                             <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingZUpPositionSetClickCommand}" PassEventArgsToCommand="False"/>
                         </dxmvvm:Interaction.Triggers>
                     </dxc:SimpleButton>
+                    <dxc:SimpleButton Content="MOVE" MinWidth="50" Margin="1 0 1 0">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingZUpPositionMoveClickCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxc:SimpleButton>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal" Margin="3">
                     <dxlc:LayoutItemLabel MinWidth="150" Content=" Z DOWN POS : " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
@@ -702,6 +722,11 @@
                     <dxc:SimpleButton Content="SET" MinWidth="50" Margin="1 0 1 0">
                         <dxmvvm:Interaction.Triggers>
                             <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingZDownPositionSetClickCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxc:SimpleButton>
+                    <dxc:SimpleButton Content="MOVE" MinWidth="50" Margin="1 0 1 0">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Click" Command="{Binding TeachingZDownPositionMoveClickCommand}" PassEventArgsToCommand="False"/>
                         </dxmvvm:Interaction.Triggers>
                     </dxc:SimpleButton>
                 </WrapPanel>

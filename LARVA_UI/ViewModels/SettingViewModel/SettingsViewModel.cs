@@ -842,7 +842,7 @@ namespace LARVA_UI.ViewModels
         private void YAxisServoMoveTo(RoutedEventArgs args)
         {
             DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Pos, (double)TargetPosition_YAxis);
-            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Velo, (double)TargetVelocity_YAxis);
+            DataManager.Instance.SET_DOUBLE_DATA(IoNameHelper.oYAxis_dTarget_Velo, TargetVelocity_YAxis);
             DataManager.Instance.SET_BOOL_DATA(IoNameHelper.oYAxis_nServo_MoveABS, true);
         }
 

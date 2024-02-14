@@ -448,7 +448,6 @@ namespace LARVA_UI.UserControls
             TargetVelocityValueChanged?.Invoke(this, e);
         }
 
-
         private void TextEditTargetVelocity_KeyDown(object sender, KeyEventArgs e)
         {
 
