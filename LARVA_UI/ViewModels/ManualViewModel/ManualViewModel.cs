@@ -8,6 +8,8 @@ using System.Windows.Controls;
 using System.ComponentModel;
 using System.Windows.Media;
 using DevExpress.Xpf.Core;
+using EPLE.Core.Manager;
+using EPLE.Core.Manager.Model;
 
 namespace LARVA_UI.ViewModels
 {
@@ -652,33 +654,88 @@ namespace LARVA_UI.ViewModels
         {
             LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
             BufferSelectBG = new SolidColorBrush(Colors.Transparent);
-            TobbabSelectBG = new SolidColorBrush(Colors.LightGreen);
-            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.LightGreen);
             VisionSelectBG = new SolidColorBrush(Colors.Transparent);
             FlipSelectBG = new SolidColorBrush(Colors.Transparent);
 
-            selectedProcess = "TOBBAB";
+            selectedProcess = "WASH";
+        }
+
+        [GenerateCommand]
+        private void VisionSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.LightGreen);
+            FlipSelectBG = new SolidColorBrush(Colors.Transparent);
+
+            selectedProcess = "VISION";
+        }
+
+        [GenerateCommand]
+        private void FlipSelectClick(RoutedEventArgs args)
+        {
+            LoaderSelectBG = new SolidColorBrush(Colors.Transparent);
+            BufferSelectBG = new SolidColorBrush(Colors.Transparent);
+            TobbabSelectBG = new SolidColorBrush(Colors.Transparent);
+            WashSelectBG = new SolidColorBrush(Colors.Transparent);
+            VisionSelectBG = new SolidColorBrush(Colors.Transparent);
+            FlipSelectBG = new SolidColorBrush(Colors.LightGreen);
+
+            selectedProcess = "FLIP";
         }
 
 
-        [GenerateCommand(Name = "RackCommandClicked")]
-        private void RackCommand(RoutedEventArgs args)
+        [GenerateCommand(Name = "RackMoveClickedCommand")]
+        private void RackMoveClicked(RoutedEventArgs args)
         {
-            if (((ContentControl)args.OriginalSource).Content.ToString().Equals("이동"))
-            {
+            int nSelectedColumn = (int.Parse(selectedColumn) * 2) - 1;
+            string location_name = string.Format("STOCK {0}_{1}{2}", selectedZone, selectedFloor, nSelectedColumn);
+            LOCATION_INFO loc = LocationManager.Instance.GetLocationList().Find((location) => { return (location.LOCATION_NAME == location_name); });
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oParam_nTransMove_LocationId, Convert.ToInt32(loc.LOCATION_ID));
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nMove_RunStop, (int)eRunStop.RUN);
+        }
 
+        [GenerateCommand(Name = "ProcessMoveClickedCommand")]
+        private void ProcessMoveClicked(RoutedEventArgs args)
+        {
+            int location_id = 0;
+
+            if (selectedProcess.Equals("TOBBAB"))
+            {
+                location_id = (int)eLocationId.TOBBAB;
             }
-            else if (((ContentControl)args.OriginalSource).Content.ToString().Equals("로딩"))
+            else if (selectedProcess.Equals("FLIP"))
             {
-
+                location_id = (int)eLocationId.FLIP;
             }
-            else if (((ContentControl)args.OriginalSource).Content.ToString().Equals("언로딩"))
+            else if (selectedProcess.Equals("WASH"))
             {
-
+                location_id = (int)eLocationId.WASH;
+            }
+            else if (selectedProcess.Equals("LOAD"))
+            {
+                location_id = (int)eLocationId.LOAD;
+            }
+            else if (selectedProcess.Equals("BUFFER"))
+            {
+                location_id = (int)eLocationId.BUFFER;
+            }
+            else if (selectedProcess.Equals("VISION"))
+            {
+                location_id = (int)eLocationId.VISION;
             }
             else
             {
+                location_id = (int)eLocationId.VISION;
             }
+
+
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oParam_nTransMove_LocationId, location_id);
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nMove_RunStop, (int)eRunStop.RUN);
         }
 
         [GenerateCommand(Name = "CirculatorCommandClicked")]

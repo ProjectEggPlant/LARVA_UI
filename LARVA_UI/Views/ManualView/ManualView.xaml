@@ -501,12 +501,12 @@
                         <StackPanel Orientation="Horizontal">
                             <dxc:SimpleButton Content="랙 위치 이동" MinWidth="100" Margin="5" Background="{Binding RackMoveBG}">
                                 <dxmvvm:Interaction.Triggers>
-                                    <dxmvvm:EventToCommand EventName="Click" Command="{Binding RackCommandClicked}" PassEventArgsToCommand="True"/>
+                                    <dxmvvm:EventToCommand EventName="Click" Command="{Binding RackMoveClickedCommand}" PassEventArgsToCommand="True"/>
                                 </dxmvvm:Interaction.Triggers>
                             </dxc:SimpleButton>
                             <dxc:SimpleButton Content="프로세스 위치 이동" MinWidth="100" Margin="5" Background="{Binding RackMoveBG}">
                                 <dxmvvm:Interaction.Triggers>
-                                    <dxmvvm:EventToCommand EventName="Click" Command="{Binding RackCommandClicked}" PassEventArgsToCommand="True"/>
+                                    <dxmvvm:EventToCommand EventName="Click" Command="{Binding ProcessMoveClickedCommand}" PassEventArgsToCommand="True"/>
                                 </dxmvvm:Interaction.Triggers>
                             </dxc:SimpleButton>
                             <dxc:SimpleButton Content="로딩" MinWidth="100" Margin="5" Background="{Binding RackLoadingBG}">

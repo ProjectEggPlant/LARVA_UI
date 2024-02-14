@@ -103,6 +103,16 @@ namespace EPLE.App
         CCW = 3
     }
 
+    public enum eLocationId
+    {
+        TOBBAB = 241,
+        FLIP = 240,
+        VISION = 245,
+        WASH = 242,
+        LOAD = 243,
+        BUFFER = 244
+    }
+
     public class IoNameHelper
     {
         public static string oEqp_nOp_Mode = "oEqp.nOp.Mode";
