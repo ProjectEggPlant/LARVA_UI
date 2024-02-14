@@ -275,6 +275,10 @@ namespace LARVA_UI.ViewModels
             {
                 servoNotMoving_TAxis = ServoNotMoving(4);
             }
+            else
+            {
+
+            }
         }
 
 

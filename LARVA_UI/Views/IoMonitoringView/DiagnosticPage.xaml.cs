@@ -123,6 +123,36 @@ namespace LARVA_UI.Views
                 }
             }
 
+            if (DigitalInputs.Count >= 540)
+            {
+                for (int i = 360; i < 540; i++)
+                {
+                    DiContent5.Children.Add(DigitalInputs[i]);
+                }
+            }
+            else
+            {
+                for (int i = 360; i < DigitalInputs.Count; i++)
+                {
+                    DiContent5.Children.Add(DigitalInputs[i]);
+                }
+            }
+
+            if (DigitalInputs.Count >= 720)
+            {
+                for (int i = 540; i < 720; i++)
+                {
+                    DiContent6.Children.Add(DigitalInputs[i]);
+                }
+            }
+            else
+            {
+                for (int i = 540; i < DigitalInputs.Count; i++)
+                {
+                    DiContent6.Children.Add(DigitalInputs[i]);
+                }
+            }
+
 
             if (DigitalOutputs.Count >= 90)
             {

@@ -33,6 +33,9 @@ namespace LARVA_UI.ViewModels
         [GenerateProperty]
         private bool isTransferHandStatus;
         [GenerateProperty]
+        private bool isTransferClampStatus;
+
+        [GenerateProperty]
         private List<string> transferHandItems = new List<string>();
         [GenerateProperty]
         private List<string> locationTypeItems = new List<string>();
@@ -167,6 +170,18 @@ namespace LARVA_UI.ViewModels
         private void TransferHandLeftChecked(RoutedEventArgs args)
         {
             DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_nHand_LeftRight, (int)eFwdBwd.FORWARD);
+        }
+
+        [GenerateCommand]
+        private void TransferClampLockChecked(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eLockUnlock.LOCK);
+        }
+
+        [GenerateCommand]
+        private void TransferClampUnlockChecked(RoutedEventArgs args)
+        {
+            DataManager.Instance.SET_INT_DATA(IoNameHelper.oTrans_BoxClamp_LockUnlock, (int)eLockUnlock.UNLOCK);
         }
 
         [GenerateCommand]

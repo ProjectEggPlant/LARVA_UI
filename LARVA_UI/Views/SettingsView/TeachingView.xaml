@@ -920,6 +920,15 @@
                         </dxmvvm:Interaction.Triggers>
                     </dxe:ToggleSwitch>
                 </WrapPanel>
+                <WrapPanel Orientation="Horizontal" Margin="3">
+                    <dxlc:LayoutItemLabel MinWidth="150" Content=" Transfer Clamp : " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <dxe:ToggleSwitch ContentPlacement="Far" HorizontalAlignment="Left" CheckedStateContent="Lock" UncheckedStateContent="Unlock" IsChecked="{Binding IsTransferClampStatus}">
+                        <dxmvvm:Interaction.Triggers>
+                            <dxmvvm:EventToCommand EventName="Checked" Command="{Binding TransferClampLockCheckedCommand}" PassEventArgsToCommand="False"/>
+                            <dxmvvm:EventToCommand EventName="Unchecked" Command="{Binding TransferClampUnlockCheckedCommand}" PassEventArgsToCommand="False"/>
+                        </dxmvvm:Interaction.Triggers>
+                    </dxe:ToggleSwitch>
+                </WrapPanel>
             </StackPanel>
         </Grid>
 

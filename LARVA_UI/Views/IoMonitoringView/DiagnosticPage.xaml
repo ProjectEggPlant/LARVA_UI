@@ -14,31 +14,45 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <dxc:DXTabControl x:Name="MainContent" Grid.Row="0" SelectionChanged="MainContent_SelectionChanged" Grid.RowSpan="2">
-            <dxc:DXTabItem Header="X0000-X1068">
+            <dxc:DXTabItem Header="X0000">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
                         <WrapPanel x:Name="DiContent1" Orientation="Vertical" Margin="5,0,5,0"/>
                     </StackPanel>
                 </Grid>
             </dxc:DXTabItem>
-            <dxc:DXTabItem Header="X1069-X10C4">
+            <dxc:DXTabItem Header="X1000">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
                         <WrapPanel x:Name="DiContent2" Orientation="Vertical" Margin="5,0,5,0"/>
                     </StackPanel>
                 </Grid>
             </dxc:DXTabItem>
-            <dxc:DXTabItem Header="X10C5-X1120">
+            <dxc:DXTabItem Header="X2000">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
                         <WrapPanel x:Name="DiContent3" Orientation="Vertical" Margin="5,0,5,0"/>
                     </StackPanel>
                 </Grid>
             </dxc:DXTabItem>
-            <dxc:DXTabItem Header="X1121-X1133">
+            <dxc:DXTabItem Header="X3000">
                 <Grid Background="#FFE5E5E5">
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
                         <WrapPanel x:Name="DiContent4" Orientation="Vertical" Margin="5,0,5,0"/>
+                    </StackPanel>
+                </Grid>
+            </dxc:DXTabItem>
+            <dxc:DXTabItem Header="X4000">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
+                        <WrapPanel x:Name="DiContent5" Orientation="Vertical" Margin="5,0,5,0"/>
+                    </StackPanel>
+                </Grid>
+            </dxc:DXTabItem>
+            <dxc:DXTabItem Header="X5000">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
+                        <WrapPanel x:Name="DiContent6" Orientation="Vertical" Margin="5,0,5,0"/>
                     </StackPanel>
                 </Grid>
             </dxc:DXTabItem>

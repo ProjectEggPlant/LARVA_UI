@@ -217,12 +217,12 @@ namespace LARVA_UI.UserControls
         private void ServoHome_Click(object sender, RoutedEventArgs e)
         {
             ServoHomeClicked?.Invoke(sender, e);
-            Window popupWindow = new Window
-            { Title = "ServoHomeWindow", Width = 600, Height = 300, WindowStartupLocation = WindowStartupLocation.CenterScreen, ResizeMode = ResizeMode.NoResize,
-              Content = new TextBlock { Text = "Servo Hommig 중입니다.", HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, FontSize = 40}
-            };
+            //Window popupWindow = new Window
+            //{ Title = "ServoHomeWindow", Width = 600, Height = 300, WindowStartupLocation = WindowStartupLocation.CenterScreen, ResizeMode = ResizeMode.NoResize,
+            //  Content = new TextBlock { Text = "Servo Hommig 중입니다.", HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, FontSize = 40}
+            //};
 
-            popupWindow.ShowDialog();
+            //popupWindow.ShowDialog();
         }
 
 

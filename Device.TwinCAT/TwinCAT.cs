@@ -274,42 +274,55 @@ namespace Device.Beckhoff
                 {
                     case (int)tcAxisFeedbackParam.ErrorId:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].ErrorId);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.HasError:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].hasError);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsReady:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isReady);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsDisabled:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isDisabled);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsFwDisabled:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isFwDisabled);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsBwDisabled:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isBwDisabled);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsCalibrated:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isCalibrated);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.HasJob:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].hasJob);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsNotMove:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isNotMoving);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsPositive:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isPositiveDirection);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsNegative:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isNegativeDirection);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsInTarget:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isInTarget);
+                        result = true;
                         break;
                     case (int)tcAxisFeedbackParam.IsInRange:
                         returnValue = Convert.ToInt32(TwinCATConnector.tcAxFeedback[axis].isInRange);
+                        result = true;
                         break;
                 }
             }

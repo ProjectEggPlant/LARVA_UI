@@ -321,6 +321,9 @@ namespace EPLE.App
 
             foreach (Data data in dataList)
             {
+                if (data.Module == "TEACHING")
+                    continue;
+
                 data.DataSetTime = null;
 
                 switch (data.Type)
